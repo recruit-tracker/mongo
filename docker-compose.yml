@@ -12,6 +12,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+      - recruit_tracker
   mongo-express:
     image: mongo-express
     restart: always
@@ -21,3 +23,6 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+networks:
+  recruit_tracker:
+    driver: bridge
