@@ -1,7 +1,8 @@
-.PHONY: build up
+.PHONY: up connect
 
-build:
-	docker compose build
 
 up:
 	docker compose up -d
+
+connect:
+	docker exec -it mongo-mongo-1 bash
